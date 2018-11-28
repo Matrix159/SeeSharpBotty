@@ -2,22 +2,23 @@
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
-namespace MyBot
+
+namespace SeeSharpBotty
 {
-    public class SeeSharpBotty
+    public class Bot
     {
         public static void Main(string[] args)
-            => new SeeSharpBotty().MainAsync().GetAwaiter().GetResult();
-        
+            => new Bot().MainAsync().GetAwaiter().GetResult();
 
-        public async Task MainAsync()
+
+        private async Task MainAsync()
         {
             var client = new DiscordSocketClient();
 
             client.Log += Log;
             client.MessageReceived += MessageReceived;
 
-            string token = "NTE2NzIxMTMwMDgyNDAyMzE5.Dt3yzQ.379PqQLMxzYkaOGtLa8ETIKwbFI"; // Remember to keep this private!
+            const string token = "NTE2NzIxMTMwMDgyNDAyMzE5.Dt3yzQ.379PqQLMxzYkaOGtLa8ETIKwbFI"; // Remember to keep this private!
             await client.LoginAsync(TokenType.Bot, token);
             await client.StartAsync();
 

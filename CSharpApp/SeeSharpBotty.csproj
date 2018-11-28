@@ -5,7 +5,8 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <ApplicationIcon>csharp.ico</ApplicationIcon>
     <Win32Resource />
-    <StartupObject>MyBot.SeeSharpBotty</StartupObject>
+    <StartupObject>SeeSharpBotty.Bot</StartupObject>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
