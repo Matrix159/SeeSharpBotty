@@ -50,7 +50,7 @@ namespace SeeSharpBotty
         private static async Task MessageReceived(SocketMessage message)
         {
             Console.WriteLine(
-                $"\n\nAuthor: {message.Author.Username}\nChannel: {message.Channel.Name}\nMessage: {message.Content}");
+                $"\nAuthor: {message.Author.Username}\nChannel: {message.Channel.Name}\nMessage: {message.Content}");
             if (message.Content.ToUpper().Contains("SEE"))
             {
                 await message.Author.SendMessageAsync("I see you.");
@@ -59,6 +59,11 @@ namespace SeeSharpBotty
             if (message.Content == "!ping")
             {
                 await message.Channel.SendMessageAsync("Pong!");
+            }
+
+            if (message.Content == "!no")
+            {
+                await FService.RestCall(message);
             }
         }
     }
