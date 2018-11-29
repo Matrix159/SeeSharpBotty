@@ -63,7 +63,7 @@ namespace SeeSharpBotty
 
             if (message.Content == "!no")
             {
-                await FService.RestCall(message);
+                await FService.Anyway(message, message.Author.Username);
             }
         }
     }
